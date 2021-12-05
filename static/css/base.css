@@ -117,11 +117,6 @@ body {
   transition: 0.1s;
 }
 
-#audio {
-  margin-right: 1px !important;
-  float: right;
-}
-
 .ripple {
   background-position: center !important;
   transition: background 0.2s !important;
@@ -143,7 +138,7 @@ body {
 }
 
 .ripple-sort-btn:hover {
-  background: #aa5311 radial-gradient(circle, transparent 1%, #ca7e43 1%)
+  background: #6bdada radial-gradient(circle, transparent 1%, #7dfdfe 1%)
     center/15000% !important;
 }
 
@@ -185,7 +180,7 @@ body {
   font-size: 33px !important;
   display: inline-flex !important;
   vertical-align: top;
-  color: #d17f3f;
+  color: #7dfdfe;
   pointer-events: none;
 }
 
@@ -238,7 +233,7 @@ body {
 }
 
 .footer-title {
-  color: #d17f3f;
+  color: #7dfdfe;
   font-size: 25px;
 }
 

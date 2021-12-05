@@ -1,5 +1,5 @@
 body {
-  background: url(mainbg.jpg);
+  background: url(tron.png);
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body {
   position: relative;
   text-align: right;
   font-weight: bold;
-  border-right: 4px solid #d17f3f;
+  border-right: 4px solid #7dfdfe;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -53,11 +53,11 @@ body {
 }
 
 #cover a:visited {
-  color: #d17f3f;
+  color: #7dfdfe;
 }
 
 #cover a {
-  color: #d17f3f;
+  color: #7dfdfe;
 }
 
 @media only screen and (min-height: 1081px) {
@@ -82,7 +82,7 @@ body {
 }
 
 #description-box button {
-  background-color: #d17f3f;
+  background-color: #7dfdfe;
   outline: none;
   border: none;
   margin-top: 20px;

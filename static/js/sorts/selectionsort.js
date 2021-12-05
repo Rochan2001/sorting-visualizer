@@ -21,7 +21,8 @@ const selectionSort = async () => {
 
       await bars[j].setAttribute("class", "cell");
     }
-
+    
+    await bars[min_idx].setAttribute("class", "cell current");
     await bars[i].setAttribute("class", "cell current");
     await swap(min_idx, i);
     await bars[min_idx].setAttribute("class", "cell");
