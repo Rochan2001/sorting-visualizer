@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sort Visualizer {% block headtitle %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static', filename='images/favicon.ico')}}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    {% block head %} {% endblock %}
+  </head>
+
+  <body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/base.js') }}"
+    ></script>
+    <div class="sidenav" id="sidenav">
+      <a href="/" class="sidenav-title no-remove"
+        ><i class="material-icons icon">home</i> Home</a
+      >
+      <div id="sep" class="no-remove"></div>
+      <div class="sidenav-title no-remove">
+        <i class="material-icons icon">sort</i> Sorts
+      </div>
+      <div class="sidenav-subtitle no-remove">LOGARITHMIC</div>
+      <a href="/0" class="sidenav-element no-remove">Quick Sort</a>
+      <a href="/5" class="sidenav-element no-remove">Merge Sort</a>
+      <a href="/4" class="sidenav-element no-remove">Heap Sort</a>
+      <div class="sidenav-subtitle no-remove">QUADRATIC</div>
+      <a href="/1" class="sidenav-element no-remove">Bubble Sort</a>
+      <a href="/2" class="sidenav-element no-remove"
+        >Selection Sort</a
+      >
+      <a href="/3" class="sidenav-element no-remove"
+        >Insertion Sort</a
+      >
+    </div>
+
+    <div class="topnav">
+      <button class="sidenav-btn topnav-element ripple open" id="sidenav-menu">
+        <i class="material-icons icon">menu</i>
+      </button>
+      <a href="/" class="topnav-element">SORT VISUALIZER</a>
+      {% block audio %} {% endblock %}
+    </div>
+    {% block content %} {% endblock %}
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content" style="margin-left: 0">
+            <span
+            class="footer-title"
+            style="font-family: 'Jura', Courier, monospace"
+            >SORT VISUALIZER</span
+          ><br />
+          &emsp;Rochan Singh<br />
+          &emsp;Sweeya Gadam<br />
+          &emsp;Harshavardhan Bitla<br />
+          &emsp;Manish Esuri
+        </div>
+        <div class="footer-content">
+          <span class="footer-title">Contacts:</span><br />
+          &emsp;gadamsweeya24@gmail.com<br />
+          &emsp;bahadur.rochan@gamil.com<br />
+          &emsp;hbitla007@gmail.com<br />
+          &emsp;manesuri@outlook.com
+        </div>
+        <div class="footer-content">
+          <span class="footer-title">Reference:</span><br />
+          <a
+            style="
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              color: #afafaf;
+            "
+            href="https://github.com/Myphz/sortvisualizer"
+            target="_blank"
+          >
+            &emsp;<img
+              src="{{url_for('static', filename='images/Github_icon.png')}}"
+              title="GitHub"
+              alt="github"
+            />
+            <span style="padding-left: 5px">GitHub</span>
+          </a>
+
+          <a
+            style="
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              color: #afafaf;
+            "
+            href="https://en.wikipedia.org/wiki/Sorting_algorithm"
+            target="_blank"
+          >
+            &emsp;<img
+              src="{{url_for('static', filename='images/Wikipedia_icon.png')}}"
+              title="Wikipedia"
+              alt="wikipedia"
+            />
+            <span style="padding-left: 5px">Wikipedia</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

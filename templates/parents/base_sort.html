@@ -1,0 +1,108 @@
+{% extends "parents/base.html" %} {% block headtitle %} - {% block title %}{%
+endblock %} {% endblock %} {% block head %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base_sort.css') }}"
+/>
+
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='js/base_sort.js') }}"
+  defer
+></script>
+
+{% endblock %} {% block content %} {% block js %} {% endblock %}
+<div>
+  <div id="box">
+      <div class="title"> 
+      {{ self.title() }}
+    </div>
+    <div style="float: right; white-space: nowrap">
+
+      <button class="sort-btns" id="shuffle-btn" onclick="renderBars()"><i class="material-icons">shuffle</i></button>
+      <button class="sort-btns" id="run-btn" onclick="run()" >
+        <i class="material-icons">play_arrow</i>
+      </button>
+
+      <div class="slider-container">
+        <div id="elements-text">
+          Elements: <span id="barNo">0</span><br />
+        </div>
+        <input
+          type="range"
+          value="100"
+          min="10"
+          max="100"
+          step="10"
+          name="item-num"
+          id="size"
+          onchange="renderBars()"
+        />
+
+        <div id="elements-text">
+          Speed: <span id="speed">0</span><br />
+        </div>
+        <input
+          type="range"
+          value="0"
+          min="0"
+          max="50"
+          step="10"
+          name="item-num"
+          id="time"
+          onchange="updateSpeed()"
+        />
+      </div>
+      </div>
+    </div>
+
+    <div style="clear: both; padding-top: 20px">
+        <div id="box">
+            <div class="array" id="bars"></div>
+        </div>
+        <center>
+      <h2 style="color:white">Time Taken: <span style="color:#d17f3f;" id="et"></h2>
+        </center>
+
+    </div>
+  </div>
+</div>
+<div id="sort-cover">
+  <div class="info-parent">
+    <div class="sort-description">
+      <div style="font-family: 'Jura', Courier, monospace; font-size: 35px">
+        DESCRIPTION
+      </div>
+      {% block info %} {% endblock %}
+    </div>
+    <div class="table-box">
+      <div style="font-family: 'Jura', Courier, monospace; font-size: 35px">
+        COMPLEXITY
+      </div>
+      <table class="sort-table"> 
+        <tr>
+          <th>Average Complexity</th>
+          <td>{% block medio %} {% endblock %}</td>
+        </tr>
+        <tr>
+          <th>Best Case</th>
+          <td>{% block migliore %} {% endblock %}</td>
+        </tr>
+        <tr>
+          <th>Worst Case</th>
+          <td>{% block peggiore %} {% endblock %}</td>
+        </tr>
+        <tr>
+          <th>Space Complexity</th>
+          <td>{% block memoria %} {% endblock %}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
