@@ -32,7 +32,7 @@ const selectionSort = async () => {
   bars[n - 1].setAttribute("class", "cell done");
 
   let endTime = performance.now();
-   document.getElementById("et").innerHTML = `${
+   byId("et").innerHTML = `${
      endTime - startTime
    } milliseconds`;
   enableControls();

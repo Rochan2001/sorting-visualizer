@@ -57,16 +57,16 @@ const heapSort = async () => {
   }
 
   for (let i = n - 1; i > 0; i--) {
-    bars[0].setAttribute("class", "cell current");
-    bars[i].setAttribute("class", "cell current");
+    await bars[0].setAttribute("class", "cell current");
+    await bars[i].setAttribute("class", "cell current");
     await swap(0, i);
-    bars[i].setAttribute("class", "cell done");
+    await bars[i].setAttribute("class", "cell done");
     await heapify(0, i);
   }
   bars[0].setAttribute("class", "cell done");
 
   let endTime = performance.now();
-   document.getElementById("et").innerHTML = `${
+   byId("et").innerHTML = `${
      endTime - startTime
    } milliseconds`;
   enableControls();

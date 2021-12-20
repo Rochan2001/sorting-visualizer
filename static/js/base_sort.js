@@ -1,10 +1,10 @@
 var bars;
-var speed = parseInt(document.getElementById("time").value);
+var speed = parseInt(byId("time").value);
 var swaps = 0;
 
 const renderBars = () => {
-  let noBars = document.getElementById("size").value;
-  document.getElementById("barNo").innerHTML = noBars;
+  let noBars = byId("size").value;
+  byId("barNo").innerHTML = noBars;
   let arr = [];
 
   clearScreen();
@@ -18,7 +18,7 @@ const renderBars = () => {
     arr.push(parseInt(randomNumber));
   }
 
-  const barsNode = document.getElementById("bars");
+  const barsNode = byId("bars");
   for (const element of arr) {
     const node = document.createElement("div");
     node.className = "cell";
@@ -30,8 +30,8 @@ const renderBars = () => {
 };
 
 const updateSpeed = () => {
-  speed = parseInt(document.getElementById("time").value);
-  document.getElementById("speed").innerHTML = speed;
+  speed = parseInt(byId("time").value);
+  byId("speed").innerHTML = speed;
 };
 
 const disableControls = () => {
@@ -40,7 +40,7 @@ const disableControls = () => {
     buttons[i].disabled = true;
   }
 
-  document.getElementById("size").disabled = true;
+  byId("size").disabled = true;
 };
 
 const enableControls = () => {
@@ -48,7 +48,7 @@ const enableControls = () => {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].disabled = false;
   }
-  document.getElementById("size").disabled = false;
+  byId("size").disabled = false;
 };
 
 const compare = async (index1, index2) => {
@@ -81,7 +81,7 @@ const swap = async (index1, index2) => {
 };
 
 const clearScreen = () => {
-  document.getElementById("bars").innerHTML = "";
+  byId("bars").innerHTML = "";
 };
 
 document.addEventListener("DOMContentLoaded", () => {

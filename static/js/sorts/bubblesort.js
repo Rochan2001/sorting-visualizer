@@ -24,7 +24,7 @@ const bubbleSort = async () => {
   }
   bars[0].setAttribute("class", "cell done");
   let endTime = performance.now();
-  document.getElementById("et").innerHTML = `${
+  byId("et").innerHTML = `${
      endTime - startTime
    } milliseconds`;
   enableControls();
