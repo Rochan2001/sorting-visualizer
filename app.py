@@ -9,6 +9,7 @@ sorts = [
 def home():
     return render_template("index.html")
 
+
 @app.route('/<int:sort_id>')
 def sort(sort_id):
     return render_template(f'sorts/{sorts[sort_id]}.html')

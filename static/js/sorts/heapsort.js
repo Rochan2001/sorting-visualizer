@@ -66,8 +66,6 @@ const heapSort = async () => {
   bars[0].setAttribute("class", "cell done");
 
   let endTime = performance.now();
-   byId("et").innerHTML = `${
-     endTime - startTime
-   } milliseconds`;
+  byId("et").innerHTML = `${endTime - startTime} milliseconds`;
   enableControls();
 };

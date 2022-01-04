@@ -2,12 +2,28 @@ var bars;
 var speed = parseInt(byId("time").value);
 var swaps = 0;
 
+const renderCustomBars = (values) => {
+  let arr = values;
+  clearScreen();
+
+  const barsNode = byId("bars");
+  for (const element of arr) {
+    const node = document.createElement("div");
+    node.className = "cell";
+    node.setAttribute("value", String(element));
+    node.style.height = `${4 * element}px`;
+    barsNode.appendChild(node);
+  }
+  bars = document.querySelectorAll(".cell");
+};
+
 const renderBars = () => {
   let noBars = byId("size").value;
   byId("barNo").innerHTML = noBars;
-  let arr = [];
 
+  var arr = [];
   clearScreen();
+
   let lowerBound = 1;
   let upperBound = 100;
 
@@ -17,7 +33,6 @@ const renderBars = () => {
     );
     arr.push(parseInt(randomNumber));
   }
-
   const barsNode = byId("bars");
   for (const element of arr) {
     const node = document.createElement("div");

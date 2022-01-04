@@ -1,4 +1,17 @@
 async function run() {
+  let values = byId("cinput").value.split(" ").map(Number);
+  console.log(values);
+
+  if (values.length !== 1) {
+    console.log("working");
+    renderCustomBars(values);
+  }
+
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 2000);
+  });
   bubbleSort();
 }
 
@@ -14,7 +27,7 @@ const bubbleSort = async () => {
 
       if (await compare(j, j + 1)) {
         await swap(j, j + 1);
-        console.log(j, j + 1);
+        // console.log(j, j + 1);
       }
 
       await bars[j].setAttribute("class", "cell");
@@ -24,8 +37,6 @@ const bubbleSort = async () => {
   }
   bars[0].setAttribute("class", "cell done");
   let endTime = performance.now();
-  byId("et").innerHTML = `${
-     endTime - startTime
-   } milliseconds`;
+  byId("et").innerHTML = `${endTime - startTime} milliseconds`;
   enableControls();
 };

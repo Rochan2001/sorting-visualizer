@@ -24,6 +24,15 @@ endblock %} {% endblock %} {% block head %}
     </div>
     <div style="float: right; white-space: nowrap">
 
+      <div class="slider-container">
+        <div id="elements-text">
+          Input:<br />
+        </div>
+        <input
+        type="text"
+        id="cinput"
+        />
+      </div>
       <button class="sort-btns" id="shuffle-btn" onclick="renderBars()"><i class="material-icons">shuffle</i></button>
       <button class="sort-btns" id="run-btn" onclick="run()" >
         <i class="material-icons">play_arrow</i>
@@ -43,7 +52,6 @@ endblock %} {% endblock %} {% block head %}
           id="size"
           onchange="renderBars()"
         />
-
         <div id="elements-text">
           Speed: <span id="speed">0</span><br />
         </div>
