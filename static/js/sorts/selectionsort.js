@@ -1,4 +1,16 @@
 async function run() {
+  let values = byId("cinput").value.split(" ").map(Number);
+  console.log(values);
+
+  if (values.length !== 1) {
+    console.log("working");
+    renderCustomBars(values);
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+    });
+  }
   selectionSort();
 }
 
@@ -21,7 +33,7 @@ const selectionSort = async () => {
 
       await bars[j].setAttribute("class", "cell");
     }
-    
+
     await bars[min_idx].setAttribute("class", "cell current");
     await bars[i].setAttribute("class", "cell current");
     await swap(min_idx, i);
@@ -32,8 +44,6 @@ const selectionSort = async () => {
   bars[n - 1].setAttribute("class", "cell done");
 
   let endTime = performance.now();
-   byId("et").innerHTML = `${
-     endTime - startTime
-   } milliseconds`;
+  byId("et").innerHTML = `${endTime - startTime} milliseconds`;
   enableControls();
 };

@@ -1,4 +1,16 @@
 async function run() {
+  let values = byId("cinput").value.split(" ").map(Number);
+  console.log(values);
+
+  if (values.length !== 1) {
+    console.log("working");
+    renderCustomBars(values);
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+    });
+  }
   heapSort();
 }
 
