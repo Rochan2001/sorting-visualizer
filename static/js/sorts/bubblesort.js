@@ -5,11 +5,11 @@ async function run() {
   if (values.length !== 1) {
     console.log("working");
     renderCustomBars(values);
-     await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, 2000);
-  });
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+    });
   }
 
   bubbleSort();
