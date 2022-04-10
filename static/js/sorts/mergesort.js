@@ -12,7 +12,7 @@ async function run() {
     });
   }
 
-  helper(0, bars.length - 1);
+  helperMerge(0, bars.length - 1);
 }
 
 const merge = async (l, m, r) => {
@@ -107,7 +107,7 @@ const mergeSort = async (l, r) => {
   }
 };
 
-const helper = async (l, r) => {
+const helperMerge = async (l, r) => {
   disableControls();
   let startTime = performance.now();
   await mergeSort(l, r);
