@@ -49,6 +49,14 @@ const helperQuick = async (l, r) => {
   let startTime = performance.now();
   let n = bars.length;
   await quickSort(l, r);
+  for (let counter = n - 1; counter >= 0; --counter) {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, Math.abs(speed - 50));
+    });
+    bars[counter].setAttribute("class", "cell done");
+  }
   let endTime = performance.now();
   byId("et").innerHTML = `${endTime - startTime} milliseconds`;
   enableControls();
