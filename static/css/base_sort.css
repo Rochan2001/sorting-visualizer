@@ -6,6 +6,12 @@ body {
   background-attachment: fixed;
 }
 
+.menu-box {
+  margin-top: 80px;
+  margin-left: 5%;
+  margin-bottom: 50px;
+  color: white;
+}
 .title {
   margin-left: 5%;
   float: left;
