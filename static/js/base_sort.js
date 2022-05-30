@@ -34,11 +34,18 @@ const renderBars = () => {
     arr.push(parseInt(randomNumber));
   }
   const barsNode = byId("bars");
+  let number;
   for (const element of arr) {
     const node = document.createElement("div");
+    if (parseInt(noBars) < 40) {
+      number = document.createElement("span");
+      number.innerHTML = element;
+      number.className = "bars_text";
+    }
     node.className = "cell";
     node.setAttribute("value", String(element));
     node.style.height = `${4 * element}px`;
+    parseInt(noBars) < 40 ? node.appendChild(number) : {};
     barsNode.appendChild(node);
   }
   bars = document.querySelectorAll(".cell");
