@@ -44,12 +44,12 @@ body {
 .cell.done {
   background-color: #7dfdfe;
   border-color: #7dfdfe;
-  color: white;
+  color: black;
 }
 .cell.current {
   border-color: #d40023;
   background-color: #d40023;
-  color: white;
+  color: black;
 }
 @media only screen and (max-width: 1300px) {
   .title {
