@@ -44,7 +44,7 @@ endblock %} {% endblock %} {% block head %}
         </div>
         <input
           type="range"
-          value="100"
+          value="20"
           min="10"
           max="100"
           step="10"
@@ -73,10 +73,21 @@ endblock %} {% endblock %} {% block head %}
         <div id="box">
             <div class="array" id="bars"></div>
         </div>
-        <center>
-      <h2 style="color:white">Time Taken: <span style="color:#d17f3f;" id="et"></h2>
-        </center>
-
+        <div class="ColorKey">
+            <div class="ColorKey__Item">
+                <div class="ColorKey__Box ColorKey__Sorted"></div>
+                <span style="color:white">Sorted</span>
+            </div>
+            <div class="ColorKey__Item">
+                <div class="ColorKey__Box ColorKey__GroupA"></div>
+                <span style="color:white">Unsorted</span>
+            </div>
+            <div class="ColorKey__Item">
+                <div class="ColorKey__Box ColorKey__GroupB"></div>
+                <span style="color:white">Swapping && Comparing</span>
+            </div>
+      <h2 class="ColorKey__Item" style="color:white">Time Taken: <span style="color:#d17f3f;" id="et"></h2>
+        </div>
     </div>
   </div>
 </div>

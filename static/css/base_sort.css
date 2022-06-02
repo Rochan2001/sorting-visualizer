@@ -51,6 +51,40 @@ body {
   background-color: #d40023;
   color: black;
 }
+
+.ColorKey {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.ColorKey__Item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 4rem;
+  padding: 4px;
+}
+
+.ColorKey__Box {
+  flex-shrink: 0;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+
+.ColorKey__Sorted {
+  background-color: #7dfdfe;
+}
+.ColorKey__GroupA {
+  background-color: #356d6d;
+}
+.ColorKey__GroupB {
+  background-color: red;
+}
 @media only screen and (max-width: 1300px) {
   .title {
     font-size: 70px;
