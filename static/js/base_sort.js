@@ -9,9 +9,15 @@ const renderCustomBars = (values) => {
   const barsNode = byId("bars");
   for (const element of arr) {
     const node = document.createElement("div");
+    if (arr.length < 40) {
+      number = document.createElement("span");
+      number.innerHTML = element;
+      number.className = "bars_text";
+    }
     node.className = "cell";
     node.setAttribute("value", String(element));
     node.style.height = `${4 * element}px`;
+    arr.length < 40 ? node.appendChild(number) : {};
     barsNode.appendChild(node);
   }
   bars = document.querySelectorAll(".cell");
@@ -77,7 +83,7 @@ const compare = async (index1, index2) => {
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve();
-    }, Math.abs(speed - 50));
+    }, Math.abs(speed - 70));
   });
   let value1 = parseInt(bars[index1].getAttribute("value"));
   let value2 = parseInt(bars[index2].getAttribute("value"));
@@ -91,15 +97,17 @@ const swap = async (index1, index2) => {
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve();
-    }, Math.abs(speed - 50));
+    }, Math.abs(speed - 70));
   });
   let temp1 = bars[index1].getAttribute("value");
   let temp2 = bars[index2].getAttribute("value");
 
   bars[index1].setAttribute("value", temp2);
   bars[index1].style.height = `${4 * temp2}px`;
+  bars.length < 40 ? (bars[index1].firstChild.innerHTML = temp2) : {};
   bars[index2].setAttribute("value", temp1);
   bars[index2].style.height = `${4 * temp1}px`;
+  bars.length < 40 ? (bars[index2].firstChild.innerHTML = temp1) : {};
 };
 
 const clearScreen = () => {

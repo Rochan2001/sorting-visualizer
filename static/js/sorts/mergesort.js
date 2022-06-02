@@ -39,17 +39,19 @@ const merge = async (l, m, r) => {
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, Math.abs(speed - 50));
+      }, Math.abs(speed - 70));
     });
     if (L[i] <= R[j]) {
       let temp = L[i];
       bars[k].setAttribute("value", temp);
       bars[k].style.height = `${4 * temp}px`;
+      bars.length < 40 ? (bars[k].firstChild.innerHTML = temp) : {};
       i++;
     } else {
       let temp = R[j];
       bars[k].setAttribute("value", temp);
       bars[k].style.height = `${4 * temp}px`;
+      bars.length < 40 ? (bars[k].firstChild.innerHTML = temp) : {};
       j++;
     }
     l === 0 && r === bars.length - 1
@@ -63,11 +65,12 @@ const merge = async (l, m, r) => {
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, Math.abs(speed - 50));
+      }, Math.abs(speed - 70));
     });
     let temp = L[i];
     bars[k].setAttribute("value", temp);
     bars[k].style.height = `${4 * temp}px`;
+    bars.length < 40 ? (bars[k].firstChild.innerHTML = temp) : {};
 
     l === 0 && r === bars.length - 1
       ? await bars[k].setAttribute("class", "cell done")
@@ -81,11 +84,12 @@ const merge = async (l, m, r) => {
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, Math.abs(speed - 50));
+      }, Math.abs(speed - 70));
     });
     let temp = R[j];
     bars[k].setAttribute("value", temp);
     bars[k].style.height = `${4 * temp}px`;
+    bars.length < 40 ? (bars[k].firstChild.innerHTML = temp) : {};
 
     l === 0 && r === bars.length - 1
       ? await bars[k].setAttribute("class", "cell done")

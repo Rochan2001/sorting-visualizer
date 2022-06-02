@@ -53,7 +53,7 @@ const helperQuick = async (l, r) => {
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, Math.abs(speed - 50));
+      }, Math.abs(speed - 70));
     });
     bars[counter].setAttribute("class", "cell done");
   }

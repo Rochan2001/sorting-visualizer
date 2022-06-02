@@ -26,7 +26,7 @@ const insertionSort = async () => {
       await new Promise((resolve) => {
         setTimeout(() => {
           resolve();
-        }, Math.abs(speed - 50));
+        }, Math.abs(speed - 70));
       });
       await swap(j, j + 1);
       await bars[j].setAttribute("class", "cell");
@@ -38,7 +38,7 @@ const insertionSort = async () => {
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, Math.abs(speed - 50));
+      }, Math.abs(speed - 70));
     });
     bars[counter].setAttribute("class", "cell done");
   }
