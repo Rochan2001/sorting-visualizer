@@ -24,8 +24,6 @@ const bubbleSort = async () => {
       await bars[j].setAttribute("class", "cell current");
       await bars[j + 1].setAttribute("class", "cell current");
 
-      if (flag === 1) await pauser();
-
       if (await compare(j, j + 1)) {
         await swap(j, j + 1);
         // console.log(j, j + 1);

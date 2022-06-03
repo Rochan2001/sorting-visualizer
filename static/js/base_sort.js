@@ -118,6 +118,8 @@ const compare = async (index1, index2) => {
       resolve();
     }, Math.abs(speed - 70));
   });
+
+  if (flag === 1) await pauser();
   let value1 = parseInt(bars[index1].getAttribute("value"));
   let value2 = parseInt(bars[index2].getAttribute("value"));
   if (value1 > value2) {
@@ -135,6 +137,7 @@ const swap = async (index1, index2) => {
   let temp1 = bars[index1].getAttribute("value");
   let temp2 = bars[index2].getAttribute("value");
 
+  if (flag === 1) await pauser();
   bars[index1].setAttribute("value", temp2);
   bars[index1].style.height = `${4 * temp2}px`;
   bars.length < 40 ? (bars[index1].firstChild.innerHTML = temp2) : {};

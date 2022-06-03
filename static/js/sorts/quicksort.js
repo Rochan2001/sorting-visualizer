@@ -1,6 +1,6 @@
 async function run() {
   let values = byId("cinput").value.split(" ").map(Number);
-  console.log(values);
+  document.getElementById("pa").removeAttribute("disabled");
 
   if (values.length !== 1) {
     console.log("working");
@@ -55,6 +55,7 @@ const helperQuick = async (l, r) => {
         resolve();
       }, Math.abs(speed - 70));
     });
+    if (flag === 1) await pauser();
     bars[counter].setAttribute("class", "cell done");
   }
   let endTime = performance.now();
