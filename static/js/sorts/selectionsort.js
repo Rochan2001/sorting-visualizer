@@ -1,6 +1,6 @@
 async function run() {
   let values = byId("cinput").value.split(" ").map(Number);
-  console.log(values);
+  document.getElementById("pa").removeAttribute("disabled");
 
   if (values.length !== 1) {
     console.log("working");
@@ -26,11 +26,18 @@ const selectionSort = async () => {
       await bars[min_idx].setAttribute("class", "cell current");
       await bars[j].setAttribute("class", "cell current");
 
+      if (flag === 1) await pauser();
+
       if (await compare(min_idx, j)) {
         await bars[min_idx].setAttribute("class", "cell");
         min_idx = j;
       }
 
+      await new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, Math.abs(speed - 70));
+      });
       await bars[j].setAttribute("class", "cell");
     }
 

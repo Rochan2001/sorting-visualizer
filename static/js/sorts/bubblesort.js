@@ -1,6 +1,6 @@
 async function run() {
   let values = byId("cinput").value.split(" ").map(Number);
-  console.log(values);
+  document.getElementById("pa").removeAttribute("disabled");
 
   if (values.length !== 1) {
     console.log("working");
@@ -11,7 +11,6 @@ async function run() {
       }, 2000);
     });
   }
-
   bubbleSort();
 }
 
@@ -24,6 +23,8 @@ const bubbleSort = async () => {
     for (let j = 0; j < n - i - 1; j++) {
       await bars[j].setAttribute("class", "cell current");
       await bars[j + 1].setAttribute("class", "cell current");
+
+      if (flag === 1) await pauser();
 
       if (await compare(j, j + 1)) {
         await swap(j, j + 1);

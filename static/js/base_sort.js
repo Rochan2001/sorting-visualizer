@@ -1,6 +1,7 @@
 var bars;
 var speed = parseInt(byId("time").value);
 var swaps = 0;
+var flag = 0;
 
 const renderCustomBars = (values) => {
   let arr = values;
@@ -23,6 +24,31 @@ const renderCustomBars = (values) => {
   bars = document.querySelectorAll(".cell");
 };
 
+function pauser() {
+  return new Promise((resolve) => {
+    let playbuttonclick = function () {
+      document.getElementById("pa").removeAttribute("disabled");
+
+      document.getElementById("pl").setAttribute("disabled", "true");
+
+      document
+        .getElementById("pl")
+        .removeEventListener("click", playbuttonclick);
+
+      flag = 0;
+      resolve("resolved");
+    };
+    document.getElementById("pl").addEventListener("click", playbuttonclick);
+  });
+}
+
+document.getElementById("pa").addEventListener("click", function () {
+  flag = 1;
+
+  document.getElementById("pa").setAttribute("disabled", "true");
+
+  document.getElementById("pl").removeAttribute("disabled");
+});
 const renderBars = () => {
   let noBars = byId("size").value;
   byId("barNo").innerHTML = noBars;
@@ -62,9 +88,13 @@ const updateSpeed = () => {
   byId("speed").innerHTML = speed;
 };
 
+document.getElementById("pl").setAttribute("disabled", "true");
+document.getElementById("pa").setAttribute("disabled", "true");
 const disableControls = () => {
   let buttons = document.querySelectorAll("button");
   for (let i = 0; i < buttons.length; i++) {
+    console.log(buttons[i]);
+    if (buttons[i].id === "pa" || buttons[i].id === "pl") continue;
     buttons[i].disabled = true;
   }
 
@@ -77,6 +107,9 @@ const enableControls = () => {
     buttons[i].disabled = false;
   }
   byId("size").disabled = false;
+
+  document.getElementById("pl").setAttribute("disabled", "true");
+  document.getElementById("pa").setAttribute("disabled", "true");
 };
 
 const compare = async (index1, index2) => {

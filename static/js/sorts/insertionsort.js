@@ -1,6 +1,6 @@
 async function run() {
   let values = byId("cinput").value.split(" ").map(Number);
-  console.log(values);
+  document.getElementById("pa").removeAttribute("disabled");
 
   if (values.length !== 1) {
     console.log("working");
@@ -26,8 +26,9 @@ const insertionSort = async () => {
       await new Promise((resolve) => {
         setTimeout(() => {
           resolve();
-        }, Math.abs(speed - 70));
+        }, Math.abs(speed - 90));
       });
+      if (flag === 1) await pauser();
       await swap(j, j + 1);
       await bars[j].setAttribute("class", "cell");
       await bars[j + 1].setAttribute("class", "cell");
