@@ -34,10 +34,15 @@ endblock %} {% endblock %} {% block head %}
         />
       </div>
       <button class="sort-btns" id="shuffle-btn" onclick="renderBars()"><i class="material-icons">shuffle</i></button>
-      <button class="sort-btns" id="run-btn" onclick="run()" >
-        <i class="material-icons">play_arrow</i>
+      <button class="sort-btns" onclick="run()" >
+        <i class="material-icons" >play_arrow</i>
       </button>
-
+      <button id="pl" class="sort-btns" >
+        <i id="play" class="material-icons" >play_arrow</i>
+      </button>
+      <button id="pa" class="sort-btns" >
+        <i  class="material-icons" >pause</i>
+      </button>
       <div class="slider-container">
         <div id="elements-text">
           Elements: <span id="barNo">0</span><br />
