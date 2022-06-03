@@ -28,7 +28,7 @@ const insertionSort = async () => {
           resolve();
         }, Math.abs(speed - 90));
       });
-      if (flag === 1) await pauser();
+
       await swap(j, j + 1);
       await bars[j].setAttribute("class", "cell");
       await bars[j + 1].setAttribute("class", "cell");

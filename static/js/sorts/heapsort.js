@@ -1,6 +1,6 @@
 async function run() {
   let values = byId("cinput").value.split(" ").map(Number);
-  console.log(values);
+  document.getElementById("pa").removeAttribute("disabled");
 
   if (values.length !== 1) {
     console.log("working");
@@ -72,6 +72,7 @@ const heapSort = async () => {
     await bars[0].setAttribute("class", "cell current");
     await bars[i].setAttribute("class", "cell current");
     await swap(0, i);
+
     await bars[i].setAttribute("class", "cell done");
     await heapify(0, i);
   }

@@ -1,6 +1,6 @@
 async function run() {
   let values = byId("cinput").value.split(" ").map(Number);
-  console.log(values);
+  document.getElementById("pa").removeAttribute("disabled");
 
   if (values.length !== 1) {
     console.log("working");
@@ -42,12 +42,14 @@ const merge = async (l, m, r) => {
       }, Math.abs(speed - 70));
     });
     if (L[i] <= R[j]) {
+      if (flag === 1) await pauser();
       let temp = L[i];
       bars[k].setAttribute("value", temp);
       bars[k].style.height = `${4 * temp}px`;
       bars.length < 40 ? (bars[k].firstChild.innerHTML = temp) : {};
       i++;
     } else {
+      if (flag === 1) await pauser();
       let temp = R[j];
       bars[k].setAttribute("value", temp);
       bars[k].style.height = `${4 * temp}px`;
@@ -68,6 +70,7 @@ const merge = async (l, m, r) => {
       }, Math.abs(speed - 70));
     });
     let temp = L[i];
+    if (flag === 1) await pauser();
     bars[k].setAttribute("value", temp);
     bars[k].style.height = `${4 * temp}px`;
     bars.length < 40 ? (bars[k].firstChild.innerHTML = temp) : {};
@@ -86,6 +89,7 @@ const merge = async (l, m, r) => {
         resolve();
       }, Math.abs(speed - 70));
     });
+    if (flag === 1) await pauser();
     let temp = R[j];
     bars[k].setAttribute("value", temp);
     bars[k].style.height = `${4 * temp}px`;
