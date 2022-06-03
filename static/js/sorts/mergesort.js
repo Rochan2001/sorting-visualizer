@@ -109,6 +109,7 @@ const mergeSort = async (l, r) => {
 
     await mergeSort(l, m);
 
+    if (flag === 1) await pauser();
     await mergeSort(m + 1, r);
 
     await merge(l, m, r);
